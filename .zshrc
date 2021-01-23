@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="/Users/colin/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,7 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z zsh-autosuggestions)
+plugins=(git zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +106,9 @@ prompt_context() {
   fi
 }
 
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ 
+alias hlt="cd ~/Dev/hlt"
 alias srczsh="source ~/.zshrc"
 alias vizsh="vim ~/.zshrc"
 
@@ -116,3 +119,13 @@ export NVM_DIR="$HOME/.nvm"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 export PATH="$PATH:$HOME/.rvm/bin"export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+alias hlt-start="~/Dev/hlt/start-all"
+alias hlt-stop="~/Dev/hlt/stop"
+alias hlt-tail="~/Dev/hlt/tail"
+alias hlt-services="~/Dev/hlt/start-services"
+alias code-hlt="code ~/Dev/hlt/hlt.code-workspace"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

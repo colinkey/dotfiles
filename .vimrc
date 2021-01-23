@@ -45,9 +45,11 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug 'dense-analysis/ale'
+Plug 'tomtom/tcomment_vim'
+" auto-close brackets/parens
+Plug 'cohama/lexima.vim'
 
 call plug#end()
 
@@ -55,7 +57,6 @@ colorscheme dracula
 let g:airline_theme = 'dracula'
 let g:airline_powerline_fonts = 1
 
-" theme fix for macos
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
@@ -107,3 +108,4 @@ let g:ale_fix_on_save = 1
 " ctrl p to search :GFiles
 nnoremap <C-p> :GFiles<CR>
 map <C-b> :NERDTreeToggle<CR>
+
