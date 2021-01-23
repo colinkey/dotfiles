@@ -68,9 +68,10 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z)
+plugins=(git zsh-z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
 
 # User configuration
 
@@ -106,12 +107,6 @@ prompt_context() {
   fi
 }
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-alias hlt="cd ~/Dev/hlt"
-alias srczsh="source ~/.zshrc"
-alias vizsh="vim ~/.zshrc"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -120,12 +115,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 export PATH="$PATH:$HOME/.rvm/bin"export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-
-alias hlt-start="~/Dev/hlt/start-all"
-alias hlt-stop="~/Dev/hlt/stop"
-alias hlt-tail="~/Dev/hlt/tail"
-alias hlt-services="~/Dev/hlt/start-services"
-alias code-hlt="code ~/Dev/hlt/hlt.code-workspace"
+[[ -d /usr/libexec/java_home  ]] && export JAVA_HOME=$(/usr/libexec/java_home)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
