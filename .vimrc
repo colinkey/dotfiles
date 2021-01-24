@@ -104,8 +104,14 @@ let g:ale_fixers = {
       \}
 let g:ale_fix_on_save = 1
 
-" key bindings
-" ctrl p to search :GFiles
-nnoremap <C-p> :GFiles<CR>
+" FZF Config
+" FZF by default does not ignore patterns in .gitignore but it'd be cool if it
+" did so changing this env var will override the default behavior.
+let $FZF_DEFAULT_COMMAND = 'rg --files'
+" ctrl p to search :Files
+nnoremap <C-p> :Files<CR>
+" END FZF Config
+
+" ctrl b to toggle NERDTree
 map <C-b> :NERDTreeToggle<CR>
 
