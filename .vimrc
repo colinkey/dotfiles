@@ -50,6 +50,7 @@ Plug 'dense-analysis/ale'
 Plug 'tomtom/tcomment_vim'
 " auto-close brackets/parens
 Plug 'cohama/lexima.vim'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -115,3 +116,4 @@ nnoremap <C-p> :Files<CR>
 " ctrl b to toggle NERDTree
 map <C-b> :NERDTreeToggle<CR>
 
+set gfn=JetBrainsMono-Medium:h14
