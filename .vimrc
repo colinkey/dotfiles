@@ -51,11 +51,12 @@ Plug 'tomtom/tcomment_vim'
 " auto-close brackets/parens
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
-colorscheme dracula
-let g:airline_theme = 'dracula'
+colorscheme nord
+let g:airline_theme = 'nord'
 let g:airline_powerline_fonts = 1
 
 let &t_ZH="\e[3m"
