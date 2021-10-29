@@ -52,6 +52,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
