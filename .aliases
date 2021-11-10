@@ -1,11 +1,3 @@
 # Generic aliases
 alias srczsh="source ~/.zshrc"
 alias vizsh="vim ~/.zshrc"
-
-# HLT specific
-alias hlt="cd ~/Dev/hlt"
-alias hlt-start="~/Dev/hlt/start-all"
-alias hlt-stop="~/Dev/hlt/stop"
-alias hlt-tail="~/Dev/hlt/tail"
-alias hlt-services="~/Dev/hlt/start-services"
-alias code-hlt="code ~/Dev/hlt.code-workspace"
