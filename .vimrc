@@ -17,7 +17,7 @@ set noswapfile
 set nobackup
 
 " show line numbers
-set number
+set number relativenumber
 " always show column to left of numbers to prevent shifting
 set signcolumn=yes
 
@@ -49,10 +49,8 @@ Plug 'tpope/vim-surround'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'pangloss/vim-javascript'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
-Plug 'dense-analysis/ale'
 Plug 'tomtom/tcomment_vim'
 " auto-close brackets/parens
 Plug 'cohama/lexima.vim'
@@ -60,10 +58,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
 
+" Load neovim specific plugin if neovim is available
+if has('nvim')
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+endif
+
 call plug#end()
 
-colorscheme nord
-let g:airline_theme = 'nord'
+colorscheme dracula
+let g:airline_theme = 'dracula'
 let g:airline_powerline_fonts = 1
 
 let &t_ZH="\e[3m"
@@ -100,26 +104,36 @@ endfunction
 
 " Ale Configuration
 " Only enable eslint as linter
-let g:ale_linter_aliases = { 'vue': ['vue', 'javascript'] }
-let g:ale_linters = {
-      \ 'javascript': ['eslint'],
-      \ 'vue': ['eslint', 'vls'],
-      \}
-" Ale enables code actions on save so let's add eslint to that
-let g:ale_fixers = {
-      \ '*': ['trim_whitespace'],
-      \ 'javascript': ['eslint'],
-      \ 'vue': ['eslint'],
-      \}
-let g:ale_fix_on_save = 1
+" let g:ale_linter_aliases = { 'vue': ['vue', 'javascript'] }
+" let g:ale_linters = {
+"       \ 'javascript': ['eslint'],
+"       \ 'vue': ['eslint', 'vls'],
+"       \}
+" " Ale enables code actions on save so let's add eslint to that
+" let g:ale_fixers = {
+"       \ '*': ['trim_whitespace'],
+"       \ 'javascript': ['eslint'],
+"       \ 'javascriptreact': ['eslint'],
+"       \ 'typescript': ['eslint'],
+"       \ 'typescriptreact': ['eslint'],
+"       \ 'vue': ['eslint'],
+"       \}
+" let g:ale_fix_on_save = 1
 
-" FZF Config
-" FZF by default does not ignore patterns in .gitignore but it'd be cool if it
-" did so changing this env var will override the default behavior.
-let $FZF_DEFAULT_COMMAND = 'rg --files'
-" ctrl p to search :Files
-nnoremap <C-p> :Files<CR>
-" END FZF Config
+if has('nvim')
+  nnoremap <C-p> :Telescope find_files<CR>
+  nnoremap <leader>ff :Telescope find_files<CR>
+  nnoremap <leader>fg :Telescope live_grep<CR>
+  nnoremap <leader>fb :Telescope buffers<CR>
+else
+  " FZF Config
+  " FZF by default does not ignore patterns in .gitignore but it'd be cool if it
+  " did so changing this env var will override the default behavior.
+  let $FZF_DEFAULT_COMMAND = 'rg --files'
+  " ctrl p to search :Files
+  nnoremap <C-p> :Files<CR>
+  " END FZF Config
+endif
 
 " ctrl b to toggle NERDTree
 map <C-b> :NERDTreeToggle<CR>
