@@ -21,7 +21,7 @@ ZSH_THEME="amuse"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -68,10 +68,12 @@ ZSH_THEME="amuse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z zsh-autosuggestions)
+plugins=(git zsh-z)
+# plugins=(git zsh-z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+source $HOME/.zshenv
 
 # User configuration
 
@@ -101,12 +103,12 @@ source $HOME/.aliases
 
 DEFAULT_USER=whoami
 
-prompt_context() {
+# prompt_context() {
 # Used for agnoster
 #   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
 #     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
 #   fi
-}
+# }
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -122,9 +124,9 @@ eval "$(rbenv init -)"
 
 export PATH=$PATH:/usr/local/go/bin
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Sets the default editor to neovim
-export EDITOR=/opt/homebrew/bin/nvim
-export VISUAL=/opt/homebrew/bin/nvim
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=/usr/local/bin/nvim
+
+
+export PATH=$PATH:~/.local/bin
