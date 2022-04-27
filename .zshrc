@@ -73,7 +73,6 @@ plugins=(git zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
-source $HOME/.zshenv
 
 # User configuration
 
