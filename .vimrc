@@ -75,8 +75,8 @@ endif
 
 call plug#end()
 
-colorscheme gruvbox-material
-let g:airline_theme = 'gruvbox_material'
+colorscheme everforest
+let g:airline_theme = 'everforest'
 let g:airline_powerline_fonts = 1
 
 if has('nvim')
@@ -109,6 +109,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_global_extensions = ['coc-eslint', 'coc-solargraph', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-json']
 " End of CoC configuration
 
 " Dashboard config
@@ -143,3 +145,4 @@ require'shade'.setup({
   }
 })
 EOF
+
