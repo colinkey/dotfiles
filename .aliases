@@ -1,3 +1,4 @@
-# Generic aliases
 alias srczsh="source ~/.zshrc"
 alias vizsh="vim ~/.zshrc"
+alias nvzsh="nvim ~/.zshrc"
+alias nvvrc="nvim ~/.vimrc"
