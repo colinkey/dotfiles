@@ -50,11 +50,10 @@ Plug 'preservim/nerdtree'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elixir-editors/vim-elixir'
-
-" :CocInstall coc-solargraph coc-tsserver coc-eslint
+Plug 'vim-crystal/vim-crystal'
 
 " auto-close brackets/parens
-" Plug 'cohama/lexima.vim'
+Plug 'cohama/lexima.vim'
 
 " Themes
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -81,7 +80,7 @@ let g:airline_powerline_fonts = 1
 
 if has('nvim')
   nnoremap <C-p> :Telescope find_files<CR>
-  nnoremap <leader>ff :Telescope find_files<CR>
+  nnoremap <leader>ff :Telescope find_files hidden=true<CR>
   nnoremap <leader>fg :Telescope live_grep<CR>
   nnoremap <leader>fb :Telescope buffers<CR>
 else
