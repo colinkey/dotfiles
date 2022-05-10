@@ -132,6 +132,26 @@ let g:dashboard_custom_shortcut={
 \ 'book_marks'          : 'dont use this lolo'
 \ }
 
+command! -range=1 BreakAfter :s/\./\.\r/g
+command! -range=1 BreakBefore :s/\./\r\./g
+
+function! s:BreakIt() 
+	" Sets a mark `Z`
+	execute "mark Z" 
+	" Calls the BreakAfter command that will break the current line into
+	" multiple lines after the .
+	execute "BreakAfter"
+	" Goes to the end of the current line, enters visual mode, go to the
+	" previous set mark, and formats the selection
+	execute "normal! $v`Z="
+	" Removes the mark Z
+	execute "delm Z"
+	" Removes the search highlighting
+	execute "noh"
+endfunction
+
+nnoremap <leader>gb :call <SID>BreakIt()<CR>
+
 " Command for twilight
 nnoremap <silent> <Leader>tl :Twilight<CR>
 lua << EOF
