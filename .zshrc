@@ -124,8 +124,11 @@ eval "$(rbenv init -)"
 export PATH=$PATH:/usr/local/go/bin
 
 # Sets the default editor to neovim
-export EDITOR=/usr/local/bin/nvim
-export VISUAL=/usr/local/bin/nvim
+# export EDITOR=/usr/local/bin/nvim
+# export VISUAL=/usr/local/bin/nvim
+
+export EDITOR=nvim
+export VISUAL=nvim
 
 
 export PATH=$PATH:~/.local/bin

@@ -1,0 +1,15 @@
+{
+  "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+	"languageserver": {
+		"crystal": {
+			"command": "~/Dev/crystalline",
+			"args": [
+				"--stdio"
+			],
+			"filetypes": [
+				"crystal"
+			]
+		}
+	}
+}

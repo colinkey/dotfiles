@@ -78,23 +78,15 @@ colorscheme everforest
 let g:airline_theme = 'everforest'
 let g:airline_powerline_fonts = 1
 
-if has('nvim')
-  nnoremap <C-p> :Telescope find_files<CR>
-  nnoremap <leader>ff :Telescope find_files hidden=true<CR>
-  nnoremap <leader>fg :Telescope live_grep<CR>
-  nnoremap <leader>fb :Telescope buffers<CR>
-else
-  " FZF Config
-  " FZF by default does not ignore patterns in .gitignore but it'd be cool if it
-  " did so changing this env var will override the default behavior.
-  let $FZF_DEFAULT_COMMAND = 'rg --files'
-  " \ff to search :Files
-  nnoremap <leader>ff :Files<CR>
-  " END FZF Config
-endif
+" FZF Config
+" This gets overridden for nvim in init.vim
+" FZF by default does not ignore patterns in .gitignore but it'd be cool if it
+" did so changing this env var will override the default behavior.
+let $FZF_DEFAULT_COMMAND = 'rg --files'
+" \ff to search :Files
+nnoremap <leader>ff :Files<CR>
+" END FZF Config
 
-" ctrl b to toggle NERDTree
-" map <C-b> :NERDTreeToggle<CR>
 nnoremap <Leader>tt :NERDTreeToggle<CR>
 
 " Configuration required for tab completion with autocomplete
@@ -153,15 +145,4 @@ nnoremap <leader>gb :call <SID>BreakIt()<CR>
 
 " Command for twilight
 nnoremap <silent> <Leader>tl :Twilight<CR>
-lua << EOF
-require'shade'.setup({
-  overlay_opacity = 50,
-  opacity_step = 1,
-  keys = {
-    brightness_up    = '<C-Up>',
-    brightness_down  = '<C-Down>',
-    toggle           = '<Leader>ts',
-  }
-})
-EOF
 
