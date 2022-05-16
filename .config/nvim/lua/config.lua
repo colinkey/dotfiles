@@ -19,3 +19,7 @@ require'shade'.setup({
 -- Telescope
 -- Required to set fzf as the default picker
 require('telescope').load_extension('fzf')
+
+-- Nvim Tree
+require('nvim-tree').setup()
+vim.api.nvim_set_keymap('', '<Leader>tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true})

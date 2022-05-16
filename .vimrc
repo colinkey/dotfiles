@@ -31,6 +31,10 @@ set autoread
 " allow mouse input in all modes
 set mouse=a
 
+" sets guifont to a supported fonttype
+" https://www.nerdfonts.com/font-downloads
+set guifont=Hack\ Nerd\ Font:h15
+
 if has('termguicolors')
   set termguicolors
 endif
@@ -49,7 +53,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-sensible'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+Plug 'tpope/vim-fugitive'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elixir-editors/vim-elixir'
@@ -74,6 +79,8 @@ if has('nvim')
 	Plug 'glepnir/dashboard-nvim'
 	Plug 'sunjon/shade.nvim'
 	Plug 'folke/twilight.nvim'
+	Plug 'kyazdani42/nvim-web-devicons'
+	Plug 'kyazdani42/nvim-tree.lua'
 endif
 
 call plug#end()
@@ -91,7 +98,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --files'
 nnoremap <leader>ff :Files<CR>
 " END FZF Config
 
-nnoremap <Leader>tt :NERDTreeToggle<CR>
+" nnoremap <Leader>tt :NERDTreeToggle<CR>
 
 " Configuration required for tab completion with autocomplete
 inoremap <silent><expr> <TAB>
