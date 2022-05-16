@@ -28,6 +28,9 @@ set autoread
 " don't wrap text to next line
 " set nowrap
 
+" allow mouse input in all modes
+set mouse=a
+
 if has('termguicolors')
   set termguicolors
 endif
@@ -64,6 +67,7 @@ Plug 'sainnhe/gruvbox-material'
 " Load neovim specific plugin if neovim is available
 if has('nvim')
 	Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+	Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
 	Plug 'lukas-reineke/indent-blankline.nvim'

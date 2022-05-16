@@ -15,3 +15,7 @@ require'shade'.setup({
     toggle           = '<Leader>ts',
   }
 })
+
+-- Telescope
+-- Required to set fzf as the default picker
+require('telescope').load_extension('fzf')
