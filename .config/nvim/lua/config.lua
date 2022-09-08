@@ -21,5 +21,19 @@ require'shade'.setup({
 require('telescope').load_extension('fzf')
 
 -- Nvim Tree
-require('nvim-tree').setup()
+require('nvim-tree').setup({
+	view = {
+		width = 40
+	},
+	update_focused_file = {
+		enable = true
+	}
+})
 vim.api.nvim_set_keymap('', '<Leader>tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true})
+
+require'nvim-treesitter.configs'.setup({
+	ensure_installed = { "ruby", "javascript", "typescript", "html", "json" },
+	highlight = {
+		enable = true
+	}
+})

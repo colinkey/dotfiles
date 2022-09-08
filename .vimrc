@@ -33,7 +33,7 @@ set mouse=a
 
 " sets guifont to a supported fonttype
 " https://www.nerdfonts.com/font-downloads
-set guifont=Hack\ Nerd\ Font:h15
+set guifont=Iosevka\ Nerd\ Font:h15
 
 if has('termguicolors')
   set termguicolors
@@ -112,7 +112,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_global_extensions = ['coc-eslint', 'coc-solargraph', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-json']
+let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-solargraph', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-json']
 " End of CoC configuration
 
 " Dashboard config
@@ -156,4 +156,8 @@ nnoremap <leader>gb :call <SID>BreakIt()<CR>
 
 " Command for twilight
 nnoremap <silent> <Leader>tl :Twilight<CR>
+function! s:CpRelPath()
+	execute "!echo % | pbcopy"
+endfunction
 
+nnoremap <leader>crp :call <SID>CpRelPath()<CR>
