@@ -1,5 +1,6 @@
 {
   "eslint.autoFixOnSave": true,
+	"elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 	"languageserver": {
 		"crystal": {

@@ -32,7 +32,7 @@ require('nvim-tree').setup({
 vim.api.nvim_set_keymap('', '<Leader>tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true})
 
 require'nvim-treesitter.configs'.setup({
-	ensure_installed = { "ruby", "javascript", "typescript", "html", "json" },
+	ensure_installed = { "ruby", "javascript", "typescript", "html", "json", "elixir", "eex", "heex" },
 	highlight = {
 		enable = true
 	}
