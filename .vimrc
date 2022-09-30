@@ -16,6 +16,8 @@ set nobackup
 
 " show line numbers
 set number
+set relativenumber
+
 " always show column to left of numbers to prevent shifting
 set signcolumn=yes
 
@@ -55,7 +57,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-crystal/vim-crystal'
 
@@ -81,6 +82,12 @@ if has('nvim')
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'kyazdani42/nvim-tree.lua'
 	Plug 'ruifm/gitlinker.nvim'
+	Plug 'williamboman/mason.nvim'
+	Plug 'williamboman/mason-lspconfig.nvim'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/nvim-cmp'
 endif
 
 call plug#end()
@@ -104,12 +111,31 @@ endfunction
 let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-solargraph', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-json', 'coc-elixir']
 " End of CoC configuration
 
+" Dashboard config
+let g:dashboard_default_executive = 'telescope'
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
+nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+
+let g:dashboard_custom_shortcut={
+\ 'last_session'       : '\ s l',
+\ 'find_history'       : '\ f h',
+\ 'find_file'          : '\ f f',
+\ 'new_file'           : '\ c n',
+\ 'change_colorscheme' : '\ t c',
+\ 'find_word'          : '\ f a',
+\ 'book_marks'         : '\ f b'
+\ }
+
 command! -range=1 BreakAfter :s/\./\.\r/g
 command! -range=1 BreakBefore :s/\./\r\./g
 
-function! s:BreakIt() 
+function! s:BreakIt()
 	" Sets a mark `Z`
-	execute "mark Z" 
+	execute "mark Z"
 	" Calls the BreakAfter command that will break the current line into
 	" multiple lines after the .
 	execute "BreakAfter"
@@ -127,8 +153,22 @@ nnoremap <leader>gb :call <SID>BreakIt()<CR>
 " Command for twilight
 nnoremap <silent> <Leader>tl :Twilight<CR>
 
+" copy_relative_path
 function! s:CpRelPath()
 	execute "!echo % | pbcopy"
 endfunction
 
 nnoremap <leader>crp :call <SID>CpRelPath()<CR>
+" end copy_relative_path
+
+" toggle_relative_numbers
+function! s:ToggleRelNum()
+	if &relativenumber == 1
+		execute ":set norelativenumber"
+	else
+		execute ":set relativenumber"
+	endif
+endfunction
+
+nnoremap <Leader>rn :call <SID>ToggleRelNum()<CR>
+" end toggle_relative_numbers
