@@ -37,3 +37,7 @@ require'nvim-treesitter.configs'.setup({
 		enable = true
 	}
 })
+
+require('indent_blankline').setup {
+	filetype_exclude = { "dashboard" }
+}

@@ -33,7 +33,7 @@ set mouse=a
 
 " sets guifont to a supported fonttype
 " https://www.nerdfonts.com/font-downloads
-set guifont=Iosevka\ Nerd\ Font:h15
+set guifont=JetBrainsMono\ Nerd\ Font:h14
 
 if has('termguicolors')
   set termguicolors
@@ -53,7 +53,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-sensible'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
-" Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -81,6 +80,7 @@ if has('nvim')
 	Plug 'folke/twilight.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'kyazdani42/nvim-tree.lua'
+	Plug 'ruifm/gitlinker.nvim'
 endif
 
 call plug#end()
@@ -88,17 +88,6 @@ call plug#end()
 colorscheme everforest
 let g:airline_theme = 'everforest'
 let g:airline_powerline_fonts = 1
-
-" FZF Config
-" This gets overridden for nvim in init.vim
-" FZF by default does not ignore patterns in .gitignore but it'd be cool if it
-" did so changing this env var will override the default behavior.
-let $FZF_DEFAULT_COMMAND = 'rg --files'
-" \ff to search :Files
-nnoremap <leader>ff :Files<CR>
-" END FZF Config
-
-" nnoremap <Leader>tt :NERDTreeToggle<CR>
 
 " Configuration required for tab completion with autocomplete
 inoremap <silent><expr> <TAB>
@@ -131,7 +120,7 @@ let g:dashboard_custom_shortcut={
 \ 'new_file'           : '\ c n',
 \ 'change_colorscheme' : '\ t c',
 \ 'find_word'          : '\ f a',
-\ 'book_marks'          : 'dont use this lolo'
+\ 'book_marks'         : '\ f b'
 \ }
 
 command! -range=1 BreakAfter :s/\./\.\r/g
