@@ -109,23 +109,11 @@ DEFAULT_USER=whoami
 #   fi
 # }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-
 [[ -d /usr/libexec/java_home  ]] && export JAVA_HOME=$(/usr/libexec/java_home)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=$PATH:/usr/local/go/bin
-
-# Sets the default editor to neovim
-# export EDITOR=/usr/local/bin/nvim
-# export VISUAL=/usr/local/bin/nvim
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -134,3 +122,6 @@ export VISUAL=nvim
 export PATH=$PATH:~/.local/bin
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+export ASDF_CONFIG_FILE="$HOME/.asdf-config/.asdfrc"
+export ASDF_NPM_DEFAULT_PACKAGES_FILE="$HOME/.asdf-config/.default-npm-packages"
+export ASDF_GEM_DEFAULT_PACKAGES_FILE="$HOME/.asdf-config/.default-gems"
