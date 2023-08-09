@@ -121,7 +121,8 @@ export VISUAL=nvim
 
 export PATH=$PATH:~/.local/bin
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. $(brew --prefix asdf)/libexec/asdf.sh
 export ASDF_CONFIG_FILE="$HOME/.asdf-config/.asdfrc"
 export ASDF_NPM_DEFAULT_PACKAGES_FILE="$HOME/.asdf-config/.default-npm-packages"
 export ASDF_GEM_DEFAULT_PACKAGES_FILE="$HOME/.asdf-config/.default-gems"
+
