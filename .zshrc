@@ -132,3 +132,5 @@ export VISUAL=nvim
 
 
 export PATH=$PATH:~/.local/bin
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
