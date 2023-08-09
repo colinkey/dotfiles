@@ -75,7 +75,7 @@ if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
 	Plug 'lukas-reineke/indent-blankline.nvim'
-	Plug 'glepnir/dashboard-nvim'
+	Plug 'nvimdev/dashboard-nvim'
 	Plug 'sunjon/shade.nvim'
 	Plug 'folke/twilight.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
@@ -104,25 +104,6 @@ endfunction
 let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-solargraph', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-json', 'coc-elixir']
 " End of CoC configuration
 
-" Dashboard config
-let g:dashboard_default_executive = 'telescope'
-nmap <Leader>ss :<C-u>SessionSave<CR>
-nmap <Leader>sl :<C-u>SessionLoad<CR>
-nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
-nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
-nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
-nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
-
-let g:dashboard_custom_shortcut={
-\ 'last_session'       : '\ s l',
-\ 'find_history'       : '\ f h',
-\ 'find_file'          : '\ f f',
-\ 'new_file'           : '\ c n',
-\ 'change_colorscheme' : '\ t c',
-\ 'find_word'          : '\ f a',
-\ 'book_marks'         : '\ f b'
-\ }
-
 command! -range=1 BreakAfter :s/\./\.\r/g
 command! -range=1 BreakBefore :s/\./\r\./g
 
@@ -145,6 +126,7 @@ nnoremap <leader>gb :call <SID>BreakIt()<CR>
 
 " Command for twilight
 nnoremap <silent> <Leader>tl :Twilight<CR>
+
 function! s:CpRelPath()
 	execute "!echo % | pbcopy"
 endfunction

@@ -9,3 +9,4 @@ nnoremap <leader>fg :Telescope live_grep<CR>
 nnoremap <leader>fb :Telescope buffers<CR>
 
 lua require"gitlinker".setup()
+
