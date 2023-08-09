@@ -10,7 +10,8 @@ class Dotfiles
 		"install.rb", 
 		"update.rb", 
 		"README.md", 
-		"install.cr"
+		"install.cr",
+		"q8-cmk.json"
 	]
 
 	def initialize
