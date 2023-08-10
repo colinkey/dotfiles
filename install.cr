@@ -11,7 +11,9 @@ class Dotfiles
 		"update.rb", 
 		"README.md", 
 		"install.cr",
-		"q8-cmk.json"
+		"q8-cmk.json",
+		"Brewfile",
+		"omz-plugins.txt"
 	]
 
 	def initialize

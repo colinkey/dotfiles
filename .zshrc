@@ -68,8 +68,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z)
-# plugins=(git zsh-z zsh-autosuggestions)
+plugins=(git zsh-z zsh-autosuggestions asdf you-should-use)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
@@ -102,26 +101,13 @@ source $HOME/.aliases
 
 DEFAULT_USER=whoami
 
-# prompt_context() {
-# Used for agnoster
-#   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-#     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-#   fi
-# }
-
-[[ -d /usr/libexec/java_home  ]] && export JAVA_HOME=$(/usr/libexec/java_home)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export PATH=$PATH:/usr/local/go/bin
 
 export EDITOR=nvim
 export VISUAL=nvim
 
-
 export PATH=$PATH:~/.local/bin
 
-. $(brew --prefix asdf)/libexec/asdf.sh
 export ASDF_CONFIG_FILE="$HOME/.asdf-config/.asdfrc"
 export ASDF_NPM_DEFAULT_PACKAGES_FILE="$HOME/.asdf-config/.default-npm-packages"
 export ASDF_GEM_DEFAULT_PACKAGES_FILE="$HOME/.asdf-config/.default-gems"
