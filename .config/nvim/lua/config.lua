@@ -5,16 +5,18 @@ vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true}
 vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
 
+require('lsp')
+
 -- Shade config
-require'shade'.setup({
-  overlay_opacity = 50,
-  opacity_step = 1,
-  keys = {
-    brightness_up    = '<C-Up>',
-    brightness_down  = '<C-Down>',
-    toggle           = '<Leader>ts',
-  }
-})
+-- require'shade'.setup({
+--   overlay_opacity = 50,
+--   opacity_step = 1,
+--   keys = {
+--     brightness_up    = '<C-Up>',
+--     brightness_down  = '<C-Down>',
+--     toggle           = '<Leader>ts',
+--   }
+-- })
 
 -- Telescope
 -- Required to set fzf as the default picker
