@@ -77,7 +77,7 @@ if has('nvim')
   Plug 'nvim-telescope/telescope.nvim'
 	Plug 'lukas-reineke/indent-blankline.nvim'
 	Plug 'nvimdev/dashboard-nvim'
-	Plug 'sunjon/shade.nvim'
+	" Plug 'sunjon/shade.nvim'
 	Plug 'folke/twilight.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'kyazdani42/nvim-tree.lua'
@@ -90,6 +90,9 @@ if has('nvim')
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-vsnip'
 	Plug 'hrsh7th/nvim-cmp'
+	Plug 'hrsh7th/vim-vsnip'
+	Plug 'hrsh7th/vim-vsnip-integ'
+
 endif
 
 call plug#end()
@@ -97,40 +100,6 @@ call plug#end()
 colorscheme everforest
 let g:airline_theme = 'everforest'
 let g:airline_powerline_fonts = 1
-
-" Configuration required for tab completion with autocomplete
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_global_extensions = ['coc-prettier', 'coc-eslint', 'coc-solargraph', 'coc-tsserver', 'coc-html', 'coc-css', 'coc-json', 'coc-elixir']
-" End of CoC configuration
-
-" Dashboard config
-let g:dashboard_default_executive = 'telescope'
-nmap <Leader>ss :<C-u>SessionSave<CR>
-nmap <Leader>sl :<C-u>SessionLoad<CR>
-nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
-nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
-nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
-nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
-
-let g:dashboard_custom_shortcut={
-\ 'last_session'       : '\ s l',
-\ 'find_history'       : '\ f h',
-\ 'find_file'          : '\ f f',
-\ 'new_file'           : '\ c n',
-\ 'change_colorscheme' : '\ t c',
-\ 'find_word'          : '\ f a',
-\ 'book_marks'         : '\ f b'
-\ }
 
 command! -range=1 BreakAfter :s/\./\.\r/g
 command! -range=1 BreakBefore :s/\./\r\./g

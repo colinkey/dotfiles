@@ -30,9 +30,18 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
-require("mason").setup()
+require("mason").setup({
+	ui = {
+		border = "single"
+	}
+})
 require("mason-lspconfig").setup({
-	ensure_installed = { "solargraph", "crystalline", "elixirls", "tsserver", "eslint" }
+	ensure_installed = { 
+		"solargraph",
+		"tsserver", 
+		"eslint",
+		"gopls",
+	}
 })
 
 local cmp = require'cmp'
@@ -54,6 +63,11 @@ cmp.setup({
 			end
 		end
 	},
+	snippet = {
+		expand = function(args)
+			vim.fn["vsnip#anonymous"](args.body)
+		end
+	},
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' }
 	}, {
@@ -65,29 +79,13 @@ cmp.setup({
 	})
 })
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require'lspconfig'['solargraph'].setup{
-	on_attach = on_attach,
-	capabilities = capabilities
-}
-
-require'lspconfig'['tsserver'].setup{
-	on_attach = on_attach,
-	capabilities = capabilities
-}
-
-require'lspconfig'['crystalline'].setup{
-	on_attach = on_attach,
-	capabilities = capabilities
-}
-
-require'lspconfig'['eslint'].setup{
-	on_attach = on_attach,
-	capabilities = capabilities
-}
-
-require'lspconfig'['elixirls'].setup{
-	on_attach = on_attach,
-	capabilities = capabilities
-}
+require("mason-lspconfig").setup_handlers({
+	function (server_name)
+		require("lspconfig")[server_name].setup({
+			on_attach = on_attach,
+			capabilities = capabilities
+		})
+	end
+})
