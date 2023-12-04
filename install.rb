@@ -95,8 +95,8 @@ class Installer
 		symlink_path = @base_home_path.join(file)
 		home_dir = symlink_path.dirname
 		if !(Dir.exists? home_dir)
-			puts "Creating directories"
-			Dir.mkdir_p(home_dir)
+		  puts 'Creating directories'
+			FileUtils.mkdir_p(home_dir)
 		end
 		result = File.symlink(dotfile_path(file), symlink_path)
 		puts "Result of symlink creation", result
