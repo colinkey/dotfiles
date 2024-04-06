@@ -104,7 +104,7 @@ DEFAULT_USER=whoami
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export EDITOR=nvim
-export VISUAL=code
+export VISUAL=nvim
 
 export PATH=$PATH:~/.local/bin
 

@@ -3,6 +3,4 @@ alias vizsh="vim ~/.zshrc"
 alias nvzsh="nvim ~/.zshrc"
 alias nvvrc="nvim ~/.vimrc"
 alias myprs="gh pr list --author=colinkey"
-alias gpo-master="git pull origin master"
-alias gpo-main="git pull origin main"
 alias go-reshim='asdf reshim golang && export GOROOT="$(asdf where golang)/go/"'
