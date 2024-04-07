@@ -4,7 +4,6 @@
 -- See the kickstart.nvim README for more information
 return {
 	'tpope/vim-surround',
-
 	{
 		'nvimdev/dashboard-nvim',
 		event = "VimEnter",
@@ -20,7 +19,6 @@ return {
 		end,
 		dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 	},
-
 	{
 		-- Add indentation guides even on blank lines
 		'lukas-reineke/indent-blankline.nvim',
@@ -31,7 +29,6 @@ return {
 			exclude = { filetypes = { "dashboard" } }
 		},
 	},
-
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
