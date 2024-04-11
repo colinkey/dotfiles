@@ -41,8 +41,3 @@ vim.o.termguicolors = true
 
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
-
--- Global variables
--- Use nvim-tree over netrw
-
--- vim: ts=2 sts=2 sw=2 et
