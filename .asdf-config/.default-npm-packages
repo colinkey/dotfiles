@@ -1,2 +1,5 @@
 trash-cli
 ts-node
+jsonlint
+prettier
+eslint
