@@ -112,3 +112,11 @@ export ASDF_CONFIG_FILE="$HOME/.asdf-config/.asdfrc"
 export ASDF_NPM_DEFAULT_PACKAGES_FILE="$HOME/.asdf-config/.default-npm-packages"
 export ASDF_GEM_DEFAULT_PACKAGES_FILE="$HOME/.asdf-config/.default-gems"
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
+# pnpm
+export PNPM_HOME="/Users/colin/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

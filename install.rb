@@ -103,8 +103,7 @@ class Installer
       puts 'Creating directories'
       FileUtils.mkdir_p(home_dir)
     end
-    result = File.symlink(dotfile_path(file), symlink_path)
-    puts 'Result of symlink creation', result
+    File.symlink(dotfile_path(file), symlink_path)
   end
 
   def handle_input
