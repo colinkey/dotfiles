@@ -68,7 +68,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z zsh-autosuggestions asdf you-should-use)
+plugins=(git zsh-autosuggestions asdf you-should-use)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
@@ -120,3 +120,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+eval "$(zoxide init zsh)"
