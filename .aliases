@@ -4,3 +4,6 @@ alias nvzsh="nvim ~/.zshrc"
 alias nvvrc="nvim ~/.vimrc"
 alias myprs="gh pr list --author=colinkey"
 alias go-reshim='asdf reshim golang && export GOROOT="$(asdf where golang)/go/"'
+alias fug="git reset HEAD --hard && git clean -fd"
+alias fuy="trash node_modules && yarn cache clean && yarn install"
+alias fcd='cd "$(ls | fzf)"'
