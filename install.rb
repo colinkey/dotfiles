@@ -27,6 +27,7 @@ class Installer
     @files = []
     @base_dotfile_path = Pathname.new(Dir.pwd)
     @base_home_path = Pathname.new(Dir.home)
+    @verbose = false
     gather_files
   end
 
@@ -48,7 +49,7 @@ class Installer
 
   def install
     @files.each do |f|
-      puts "Evaluating #{f}"
+      puts "Evaluating #{f}" if @verbose
       install_path = @base_home_path.join f
       file_exists = file_exists? install_path
 
@@ -79,10 +80,12 @@ class Installer
     if is_symlink
       symlink_to_dotfile_dir = File.readlink(file_home_path) == dotfile_path(file_name).to_s
       if symlink_to_dotfile_dir
-        puts "#{file_home_path} is symlinked to dotfiles directory"
+        puts "#{file_home_path} is symlinked to dotfiles directory" if @verbose
       else
         puts "It appears that #{file_home_path} is symlinked to a different file. :("
       end
+    else
+      puts "A file exists at #{file_home_path} but does not appear to be a symlink."
     end
     is_symlink
   end
@@ -90,7 +93,7 @@ class Installer
   def file_exists?(file_path)
     exists = File.exist?(file_path)
     if exists
-      puts "A file was found at #{file_path}"
+      puts "A file was found at #{file_path}" if @verbose
     else
       puts "No file found at #{file_path}"
     end
@@ -101,7 +104,7 @@ class Installer
     symlink_path = @base_home_path.join(file)
     home_dir = symlink_path.dirname
     unless Dir.exist? home_dir
-      puts 'Creating directories'
+      puts 'Creating directories' if @verbose
       FileUtils.mkdir_p(home_dir)
     end
     File.symlink(dotfile_path(file), symlink_path)
