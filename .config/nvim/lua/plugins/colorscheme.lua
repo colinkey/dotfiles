@@ -1,9 +1,11 @@
+local tokyonight = { repo = 'folke/tokyonight.nvim', scheme = 'tokyonight' }
+local everforest = { repo = 'neanias/everforest-nvim', scheme = 'everforest' }
 return {
-	"folke/tokyonight.nvim",
+	everforest.repo,
 	lazy = false,
 	priority = 1000,
 	opts = {},
 	config = function()
-		vim.cmd.colorscheme 'tokyonight'
+		vim.cmd('colorscheme ' .. everforest.scheme)
 	end,
 }

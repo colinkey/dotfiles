@@ -15,7 +15,8 @@ class Installer
     'install.cr',
     'q8-cmk.json',
     'Brewfile',
-    'omz-plugins.txt'
+    'omz-plugins.txt',
+    'macos-install.md'
   ].freeze
 
   def self.install
