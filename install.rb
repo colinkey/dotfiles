@@ -2,6 +2,7 @@
 
 require 'fileutils'
 require 'pathname'
+require 'optparse'
 
 class Installer
   EXCLUDED_FILES = [
@@ -20,14 +21,22 @@ class Installer
   ].freeze
 
   def self.install
-    new.install
+    options = {}
+    OptionParser.new do |opts|
+      opts.banner = "Usage: install.rb [options]"
+      opts.on("-v", "--verbose", "Run verbosely") do |v|
+        options[:verbose] = v
+      end
+    end.parse!
+
+    new(options).install
   end
 
-  def initialize
+  def initialize(options = {})
     @files = []
     @base_dotfile_path = Pathname.new(Dir.pwd)
     @base_home_path = Pathname.new(Dir.home)
-    @verbose = false
+    @verbose = options[:verbose] || false
     gather_files
   end
 
