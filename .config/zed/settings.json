@@ -20,7 +20,10 @@
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "Everforest Dark",
-    "dark": "One Dark"
+    "light": "One Light",
+    "dark": "Everforest Dark"
+  },
+  "file_types": {
+    "Dockerfile": ["Dockerfile*"]
   }
 }
