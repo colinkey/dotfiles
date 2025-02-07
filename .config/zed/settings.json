@@ -20,10 +20,15 @@
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "Everforest Dark"
+    "light": "Everforest Dark",
+    "dark": "One Dark"
   },
   "file_types": {
     "Dockerfile": ["Dockerfile*"]
+	},
+  "languages": {
+    "Ruby": {
+      "language_servers": ["ruby-lsp", "rubocop", "!solargraph", "..."]
+    }
   }
 }
