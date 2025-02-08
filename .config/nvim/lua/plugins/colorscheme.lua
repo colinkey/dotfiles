@@ -1,4 +1,4 @@
-local tokyonight = { repo = 'folke/tokyonight.nvim', scheme = 'tokyonight' }
+-- local tokyonight = { repo = 'folke/tokyonight.nvim', scheme = 'tokyonight' }
 local everforest = { repo = 'neanias/everforest-nvim', scheme = 'everforest' }
 return {
 	everforest.repo,
