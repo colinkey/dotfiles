@@ -1,5 +1,6 @@
 tap "colinkey/taps"
 brew "asdf"
+brew "atuin"
 brew "bat"
 brew "colinkey/taps/whichttp"
 brew "fd"

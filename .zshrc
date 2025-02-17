@@ -37,3 +37,4 @@ esac
 # zoxide start
 eval "$(zoxide init zsh)"
 # zoxide end
+eval "$(atuin init zsh)"
