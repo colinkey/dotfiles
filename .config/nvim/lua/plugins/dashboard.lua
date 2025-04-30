@@ -14,7 +14,7 @@ return {
 					{
 						desc = ' dotfiles',
 						group = '@property',
-						action = 'Telescope find_files cwd=~/Dev/dotfiles',
+						action = 'Telescope git_files cwd=~/Dev/dotfiles',
 						key = 'd',
 					},
 				},

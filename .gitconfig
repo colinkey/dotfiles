@@ -10,3 +10,5 @@ email = colin.m.key@gmail.com
 [core]
 	excludesFile = ~/.gitignore
 
+[url "git@github.com:"]
+ insteadOf = https://github.com/

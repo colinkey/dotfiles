@@ -3,10 +3,13 @@ prSections:
   filters: is:open author:@me
   type: null
 - title: Needs My Review
-  filters: is:open review-requested:@me
+  filters: is:open review-requested:@me -author:app/dependabot
   type: null
 - title: Involved
   filters: is:open involves:@me -author:@me
+  type: null
+- title: Dependabot
+  filters: is:open review-requested:@me author:app/dependabot
   type: null
 issuesSections:
 - title: My Issues
@@ -21,7 +24,7 @@ repo:
 defaults:
   preview:
     open: true
-    width: 120
+    width: 80
   prsLimit: 20
   issuesLimit: 20
   view: prs
@@ -67,3 +70,4 @@ theme:
 pager:
   diff: ""
 confirmQuit: true
+smartFilteringAtLaunch: false
