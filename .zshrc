@@ -8,6 +8,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # OMZ CONFIG END
 
+[[ -n "$WORKRC_PATH" && -f "$WORKRC_PATH" ]] && source "$WORKRC_PATH"
+
 DEFAULT_USER=whoami
 
 export EDITOR=nvim
